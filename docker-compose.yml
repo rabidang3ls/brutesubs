@@ -1,9 +1,7 @@
 version: "2"
 services:
     gobuster:
-        build:
-            context: .
-            dockerfile: tools/gobuster/Dockerfile
+        image: rabidang3ls/gobuster
         container_name: gobuster
         env_file: .env
         volumes:
@@ -12,9 +10,7 @@ services:
         command: /bin/bash /opt/secdevops/start-gobuster.sh
 
     enumall:
-        build:
-            context: .
-            dockerfile: tools/enumall/Dockerfile
+        image: rabidang3ls/enumall
         container_name: enumall
         env_file: .env
         volumes:
@@ -23,9 +19,7 @@ services:
         command: /bin/sh /opt/secdevops/start-enumall.sh
 
     sublist3r:
-        build:
-            context: .
-            dockerfile: tools/sublist3r/Dockerfile
+        image: rabidang3ls/sublist3r
         container_name: sublist3r
         env_file: .env
         volumes:
@@ -34,9 +28,7 @@ services:
         command: /bin/sh /opt/secdevops/start-sublist3r.sh
 
     altdns:
-        build:
-            context: .
-            dockerfile: tools/altdns/Dockerfile
+        image: rabidang3ls/altdns
         container_name: altdns
         env_file: .env
         volumes:
