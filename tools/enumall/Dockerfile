@@ -1,5 +1,5 @@
 FROM ubuntu:latest
-MAINTAINER Anshuman Bhartiya <anshuman.bhartiya@gmail.com>
+MAINTAINER rabidang3ls <rabidang3ls@gmail.com>
 
 # Doing the usual here
 RUN apt-get -y update && \
@@ -15,10 +15,11 @@ RUN apt-get install -y \
 	python-dnspython \
 	python-setuptools \
 	python-dev \
+	python-pip \
 	wget \
 	zlib1g-dev && apt-get clean
 
-RUN easy_install pip && pip install --upgrade pip
+RUN pip install --upgrade pip
 
 RUN mkdir /opt/subscan
 WORKDIR /opt/subscan
